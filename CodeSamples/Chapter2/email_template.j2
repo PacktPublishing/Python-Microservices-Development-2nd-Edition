@@ -1,0 +1,22 @@
+ 
+Date: {{date}} 
+From: {{from}} 
+Subject: {{subject}} 
+To: {{to}} 
+Content-Type: text/plain 
+ 
+ 
+Hello {{name}}, 
+ 
+We have received your payment! 
+ 
+Below is the list of items we will deliver for lunch: 
+ 
+{% for item in items %}- {{item['name']}} ({{item['price']}} Euros) 
+{% endfor %} 
+ 
+Thank you for your business! 
+ 
+-- 
+My Fictional Burger Place
+

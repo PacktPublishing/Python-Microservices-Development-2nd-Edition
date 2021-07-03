@@ -1,0 +1,3 @@
+quart
+sqlalchemy
+flask_sqlalchemy

@@ -1,0 +1,23 @@
+version: '2' 
+networks: 
+  jeeves: 
+services: 
+  dataservice: 
+    networks: 
+     - jeeves 
+    build: 
+        context: dataservice/ 
+    ports: 
+     - "8080:8080" 
+  tokendealer: 
+    networks: 
+     - jeeves 
+    build: 
+        context: tokendealer/ 
+    ports: 
+     - "8090:8090" 
+  rabbitmq: 
+    image: "rabbitmq:latest" 
+    networks: 
+     - jeeves 
+

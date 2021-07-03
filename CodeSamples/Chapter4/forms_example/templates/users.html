@@ -1,0 +1,14 @@
+{{ users }} 
+    <html>
+      <body>
+        <h1>User List</h1>
+        <ul>
+          {% for user in users: %}
+          <li>
+          {{ user.email }} {{ user.slack_id }} 
+          </li>
+          {% endfor %}
+        </ul>
+      </body>
+    </html>
+

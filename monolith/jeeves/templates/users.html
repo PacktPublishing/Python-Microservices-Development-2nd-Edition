@@ -1,0 +1,15 @@
+<html>
+  <body>
+    <h1>User List</h1>
+    <ul>
+      {% for user in users: %}
+      <li>
+      {{user.email}} {{user.slack_id}}
+      </li>
+      {% endfor %}
+    </ul>
+    <p>
+      <a href="/create_user">Create a new user</a> 
+    </p>
+  </body>
+</html>

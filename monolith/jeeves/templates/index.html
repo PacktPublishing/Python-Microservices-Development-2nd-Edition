@@ -1,0 +1,8 @@
+<h1>Slackbot Admin</h1>
+
+{% if current_user.is_authenticated %}
+  Hi {{ current_user.email }}! <a href="/logout">Log out</a>
+
+{% else %}
+Hi Anonymous, <a href="/login">Log in</a>
+{% endif %}

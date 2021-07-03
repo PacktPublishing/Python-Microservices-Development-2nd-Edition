@@ -1,0 +1,14 @@
+# prometheus.yml
+---
+global:
+  scrape_interval: 15s
+  external_labels:
+    monitor: 'quart-monitor'
+
+scrape_configs:
+  - job_name: 'prometheus'
+    scrape_interval: 5s
+    static_configs:
+      - targets: ['192.168.1.100:5000']  # Replace with your app's IP address
+        labels:
+          group: 'quart'
