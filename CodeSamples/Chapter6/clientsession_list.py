@@ -18,4 +18,4 @@ async def make_request():
 
 
 loop = asyncio.get_event_loop()
-loop.run_until_complete(make_requset(urls))
+loop.run_until_complete(make_request())
