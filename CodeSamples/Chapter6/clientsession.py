@@ -14,4 +14,4 @@ async def make_request(url):
 
 url = "http://localhost:5000/api"
 loop = asyncio.get_event_loop()
-loop.run_until_complete(make_requset(url))
+loop.run_until_complete(make_request(url))
