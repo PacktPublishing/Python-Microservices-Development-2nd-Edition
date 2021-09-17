@@ -11,6 +11,9 @@ ACTION_MAP = {
 OUTGOING_MAP = {"slack": post_to_slack}
 
 
+async def show_help_text(message, metadata):
+    return "This is some help text"
+
 async def process_message(message, metadata):
     """Decide on an action for a chat message.
 

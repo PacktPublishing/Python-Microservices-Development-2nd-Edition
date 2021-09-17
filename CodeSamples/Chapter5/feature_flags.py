@@ -20,3 +20,5 @@ async def migration_example():
         new_worker()
     else:
         original_worker()
+
+app.run()

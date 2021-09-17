@@ -8,7 +8,7 @@ SECRET = "f0fdeb1f1584fd5431c4250b2e859457"
 def get_token():
     data = {
         "client_id": "worker1",
-        "client_secret": secret,
+        "client_secret": SECRET,
         "audience": "jeeves.domain",
         "grant_type": "client_credentials",
     }

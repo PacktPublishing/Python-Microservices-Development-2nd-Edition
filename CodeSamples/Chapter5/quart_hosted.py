@@ -1,4 +1,4 @@
-# quart_basic.py
+# quart_hosted.py
 from quart import Quart
 
 app = Quart(__name__)
@@ -15,4 +15,4 @@ async def my_post_handler():
 
 
 if __name__ == "__main__":
-    app.run(host="192.168.1.100")
+    app.run(host="REPLACE WITH YOUR IP ADDRESS")
