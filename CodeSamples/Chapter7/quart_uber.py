@@ -5,9 +5,9 @@ app = Quart(__name__)
 SECRET = "oh no!"
 
 _TEMPLATE = """
-Hello %s 
+Hello %s
 
-Welcome to my API! 
+Welcome to my API!
 """
 
 

@@ -1,5 +1,5 @@
 # converter_custom.py
-from quart import Quart, request
+from quart import Quart
 from werkzeug.routing import BaseConverter, ValidationError
 
 _USERS = {"1": "Alice", "2": "Bob"}

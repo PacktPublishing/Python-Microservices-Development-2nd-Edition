@@ -1,5 +1,6 @@
 from pika import BlockingConnection, BasicProperties
 
+
 # assuming there's a working local RabbitMQ server with a working guest/guest account
 def message(topic, message):
     connection = BlockingConnection()

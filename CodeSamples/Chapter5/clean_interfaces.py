@@ -14,6 +14,7 @@ OUTGOING_MAP = {"slack": post_to_slack}
 async def show_help_text(message, metadata):
     return "This is some help text"
 
+
 async def process_message(message, metadata):
     """Decide on an action for a chat message.
 
@@ -33,21 +34,6 @@ async def process_message(message, metadata):
         post_to_slack(reply, metadata)
 
 
-async def weather_action(text, metadata):
-    if text:
-        location = text.replace("weather", "").replace("in", "").strip()
-    else:
-        user = (
-            db.session.query(User).filter(User.slack_id == metadata["sender"]).first()
-        )
-        if user.location:
-            location = user.location
-        else:
-            return "I don't know where you are."
-
-    return await fetch_weather(location)
-
-
 async def extract_location(text):
     return text.replace("weather", "").replace("in", "").strip()
 
@@ -57,16 +43,16 @@ async def fetch_user_location(slack_id):
     return user.location
 
 
-async def preprocess_weather_action(text, metadata):
+async def weather_action(text, metadata):
     potential_location = extract_location(text)
     if not potential_location:
         potential_location = fetch_user_location(metadata["sender"])
     if potential_location:
-        await weather_action(potential_location, metadata)
+        await process_weather_action(potential_location, metadata)
     else:
         await send_response("I don't know where you are", metadata)
 
 
-async def weather_action(location, metadata):
+async def process_weather_action(location, metadata):
     reply = await fetch_weather(location)
     await send_response(reply, metadata)

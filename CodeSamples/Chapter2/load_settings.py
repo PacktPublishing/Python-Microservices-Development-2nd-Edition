@@ -4,6 +4,7 @@
 
 from quart import Quart
 import pprint
+import yaml
 
 pp = pprint.PrettyPrinter(indent=4)
 app = Quart(__name__)
@@ -13,7 +14,5 @@ pp.pprint(app.config)
 
 app.config.from_json("prod_settings.json")
 
-
-import yaml
 
 app.config.from_file("settings.yml", yaml.safe_load)

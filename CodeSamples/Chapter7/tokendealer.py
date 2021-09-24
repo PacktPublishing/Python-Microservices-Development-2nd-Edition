@@ -88,7 +88,6 @@ async def verify_token():
         input_data = await request.form
         token = input_data["access_token"]
         audience = input_data.get("audience", "")
-        print(token, audience)
         return jwt.decode(token, key, algorithms=["RS512"], audience=audience)
     except Exception as e:
         return bad_request("Unable to verify the token")

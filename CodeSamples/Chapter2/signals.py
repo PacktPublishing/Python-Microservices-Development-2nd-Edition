@@ -1,5 +1,5 @@
 # signals.py
-from quart import Quart, g, request_finished
+from quart import Quart, request_finished
 from quart.signals import signals_available
 
 if not signals_available:

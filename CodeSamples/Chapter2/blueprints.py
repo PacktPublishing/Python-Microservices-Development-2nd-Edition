@@ -3,7 +3,7 @@ from quart import Blueprint
 
 teams = Blueprint("teams", __name__)
 
-_DEVS = [Alice, "Bob"]
+_DEVS = ["Alice", "Bob"]
 _OPS = ["Charles"]
 _TEAMS = {1: _DEVS, 2: _OPS}
 
