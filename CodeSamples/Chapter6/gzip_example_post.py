@@ -6,7 +6,7 @@ import aiohttp
 
 
 async def make_request():
-    url = "http://127.0.0.1:8080/api_post"
+    url = "http://127.0.0.1:5000/api_post"
     headers = {
         "Content-Encoding": "gzip",
     }
