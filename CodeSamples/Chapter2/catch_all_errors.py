@@ -1,6 +1,6 @@
 # catch_all_errors.py
 from quart import Quart, jsonify, abort
-from quart.exceptions import HTTPException, default_exceptions
+from werkzeug.exceptions import HTTPException, default_exceptions
 
 
 def JsonApp(app):
